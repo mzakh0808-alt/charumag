@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.env
+.env.*
+!.env.example
+.kimi/
+*.log
+*.tsbuildinfo
+.DS_Store
+data/*.local.json
