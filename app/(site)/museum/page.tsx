@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
 import { Coffee, MapPin } from "lucide-react";
-import { BookingForm } from "@/components/museum/booking-form";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { JsonLd, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Музей и клуб чайной культуры",
-  description: "Музей и клуб чайной культуры на набережной Фонтанки, 91. Экскурсии с дегустацией шести сортов чая и чайное кафе «Ти Лаунж».",
+  description: "Музей и клуб чайной культуры в историческом доме купца Горсткина на набережной Фонтанки, 91. Чайное кафе «Ти Лаунж».",
 };
 
 export default function MuseumPage() {
-  const minDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Moscow" }).format(new Date());
   return (
     <div className="container pb-16">
       <div className="page-head">
         <Breadcrumbs items={[{ href: "/", label: "Главная" }, { label: "Музей и клуб" }]} />
-        <h1>Музей, в котором можно попробовать историю</h1>
-        <p>Клуб чайной культуры, экскурсии с дегустацией и чайное кафе на набережной Фонтанки.</p>
+        <h1>История, которую можно почувствовать</h1>
+        <p>Музей, клуб чайной культуры и чайное кафе в историческом доме на набережной Фонтанки.</p>
       </div>
       <JsonLd
         data={{
@@ -45,28 +43,23 @@ export default function MuseumPage() {
           </div>
         </div>
         <div>
-          <h2 className="section-heading">Знакомство через вкус</h2>
+          <h2 className="section-heading">Пространство чайной культуры</h2>
           <p className="muted mt-5">
-            Во время экскурсии гости знакомятся с музеем и пробуют шесть сортов чая. После можно продолжить встречу в чайном кафе «Ти Лаунж».
+            Место для знакомства с историей чая, спокойных встреч и внимательного выбора любимого сорта. В пространстве музея работает чайное кафе «Ти Лаунж».
           </p>
           <div className="detail-list">
-            <div className="detail-row"><span>Формат</span><strong>Экскурсия с дегустацией</strong></div>
-            <div className="detail-row"><span>Дегустация</span><strong>6 сортов чая</strong></div>
-            <div className="detail-row"><span>На территории</span><strong>Музей, клуб, «Ти Лаунж»</strong></div>
+            <div className="detail-row"><span>Адрес</span><strong>Фонтанки, 91</strong></div>
+            <div className="detail-row"><span>Историческое место</span><strong>Дом купца Горсткина</strong></div>
+            <div className="detail-row"><span>В пространстве</span><strong>Музей, клуб, «Ти Лаунж»</strong></div>
           </div>
           <div className="notice">
-            Расписание, длительность, стоимость и правила посещения не указаны в исходных данных. Их нужно согласовать с заказчиком перед публикацией.
+            Режим работы музея и контакты для связи будут добавлены после получения подтверждённой информации от заказчика.
           </div>
           <div className="mt-6 flex items-center gap-3 text-sm text-[var(--muted)]">
             <Coffee size={22} strokeWidth={1.4} className="text-[var(--pine)]" aria-hidden="true" />
             <span>Чайное кафе «Ти Лаунж» находится в пространстве музея.</span>
           </div>
         </div>
-      </section>
-      <section id="booking" className="booking-panel scroll-mt-6">
-        <h2>Записаться на экскурсию</h2>
-        <p className="muted mb-7">Оставьте пожелания по дате и числу гостей. Заявка появится в демонстрационной админ-панели.</p>
-        <BookingForm minDate={minDate} />
       </section>
     </div>
   );

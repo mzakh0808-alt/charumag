@@ -5,14 +5,6 @@ export const formatPrice = (kopecks: number) =>
     maximumFractionDigits: 0,
   }).format(kopecks / 100);
 
-export const formatDate = (value: string) =>
-  new Intl.DateTimeFormat("ru-RU", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "Europe/Moscow",
-  }).format(new Date(`${value}T12:00:00+03:00`));
-
 export const formatDateTime = (value: string) =>
   new Intl.DateTimeFormat("ru-RU", {
     day: "2-digit",
@@ -38,11 +30,4 @@ export const orderStatusLabels: Record<string, string> = {
   ready: "Готов к выдаче",
   completed: "Завершён",
   cancelled: "Отменён",
-};
-
-export const bookingStatusLabels: Record<string, string> = {
-  new: "Новая",
-  confirmed: "Подтверждена",
-  completed: "Проведена",
-  cancelled: "Отменена",
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { ClipboardList, LayoutDashboard, MapPinned, Package, Store } from "lucide-react";
+import { ClipboardList, LayoutDashboard, Package, Store } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -8,7 +8,6 @@ const links = [
   { href: "/admin", label: "Сводка", icon: LayoutDashboard },
   { href: "/admin/products", label: "Товары", icon: Package },
   { href: "/admin/orders", label: "Заказы", icon: ClipboardList },
-  { href: "/admin/bookings", label: "Экскурсии", icon: MapPinned },
 ];
 
 export function AdminNav() {

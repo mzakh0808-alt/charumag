@@ -1,6 +1,7 @@
 import { ArrowRight, Coffee, Landmark, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { ProductCard } from "@/components/catalog/product-card";
+import { HeroArt } from "@/components/ui/hero-art";
 import { getDb, withStock } from "@/lib/db";
 import { JsonLd, siteUrl } from "@/lib/seo";
 
@@ -28,6 +29,7 @@ export default async function HomePage() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
+            <p className="hero-kicker">Чайный супермаркет в Санкт-Петербурге</p>
             <h1>Чай стоит того, чтобы не спешить.</h1>
             <p className="hero-copy">
               Чай для дома и в подарок, посуда для любимых ритуалов и музей чайной культуры в историческом доме на Фонтанке.
@@ -37,46 +39,39 @@ export default async function HomePage() {
                 Выбрать чай <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link href="/museum" className="button button-secondary">
-                Записаться в музей
+                О музее и клубе
               </Link>
             </div>
           </div>
-          <div className="hero-art" aria-label="Чашка чая — декоративная иллюстрация" role="img">
-            <div className="hero-steam" />
-            <div className="hero-cup" />
-            <div className="hero-art-note">
-              <span>Санкт-Петербург</span>
-              <span>чайная культура с 1882 года</span>
-            </div>
-          </div>
+          <HeroArt />
         </div>
       </section>
 
-      <section className="intro-strip" aria-label="Возможности">
+      <section className="intro-strip" aria-label="О «Море чая»">
         <div className="container intro-grid">
           <div className="intro-item">
-            <ShoppingBag size={24} strokeWidth={1.4} aria-hidden="true" />
+            <ShoppingBag size={25} strokeWidth={1.25} aria-hidden="true" />
             <h2>Для дома и в подарок</h2>
             <p>Чай и аксессуары с самовывозом или доставкой</p>
           </div>
           <div className="intro-item">
-            <Landmark size={24} strokeWidth={1.4} aria-hidden="true" />
-            <h2>История за чашкой</h2>
-            <p>Экскурсия с дегустацией шести сортов чая</p>
+            <Landmark size={25} strokeWidth={1.25} aria-hidden="true" />
+            <h2>История места</h2>
+            <p>Чайная лавка в доме купца Горсткина с 1882 года</p>
           </div>
           <div className="intro-item">
-            <Coffee size={24} strokeWidth={1.4} aria-hidden="true" />
+            <Coffee size={25} strokeWidth={1.25} aria-hidden="true" />
             <h2>«Ти Лаунж»</h2>
             <p>Чайное кафе музея на набережной Фонтанки</p>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section collection-section">
         <div className="container">
           <div className="section-top">
             <div>
-              <h2 className="section-heading">Начать знакомство</h2>
+              <h2 className="section-heading">Выбор для неспешного чаепития</h2>
               <p className="muted mb-0 mt-3">Демонстрационная подборка из тестового каталога</p>
             </div>
             <Link href="/catalog" className="button button-secondary button-small">
@@ -94,24 +89,25 @@ export default async function HomePage() {
       <section className="museum-banner">
         <div className="container museum-grid">
           <div>
+            <span className="museum-year">1882</span>
             <h2 className="section-heading">Дом, где чаю уделяют время</h2>
           </div>
           <div>
             <p>
-              Клуб чайной культуры и музей расположены на набережной Фонтанки, 91 — в историческом доме купца Горсткина, где чайная лавка работает с 1882 года.
+              Клуб чайной культуры и музей расположены на набережной Фонтанки, 91 — в историческом доме купца Горсткина, где чайная лавка существует с 1882 года.
             </p>
             <div className="museum-facts">
               <div className="museum-fact">
-                <strong>6 сортов</strong>
-                <span>дегустация во время экскурсии</span>
+                <strong>Дом купца Горсткина</strong>
+                <span>историческое пространство музея и клуба</span>
               </div>
               <div className="museum-fact">
-                <strong>Фонтанки, 91</strong>
-                <span>музей, клуб и чайное кафе «Ти Лаунж»</span>
+                <strong>«Ти Лаунж»</strong>
+                <span>чайное кафе на набережной Фонтанки</span>
               </div>
             </div>
             <Link href="/museum" className="button button-light">
-              Подробнее и запись <ArrowRight size={17} aria-hidden="true" />
+              О музее и клубе <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
         </div>

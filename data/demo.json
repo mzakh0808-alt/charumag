@@ -335,6 +335,5 @@
     { "productId": "acc-tray", "storeId": "store-nevsky-demo", "quantity": 1 },
     { "productId": "acc-tray", "storeId": "warehouse-demo", "quantity": 3 }
   ],
-  "orders": [],
-  "bookings": []
+  "orders": []
 }

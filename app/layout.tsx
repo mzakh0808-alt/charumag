@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Lora, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const manrope = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-manrope" });
-const lora = Lora({ subsets: ["latin", "cyrillic"], variable: "--font-lora" });
+const display = Cormorant_Garamond({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -21,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${manrope.variable} ${lora.variable}`}>
+    <html lang="ru" className={`${manrope.variable} ${display.variable}`}>
       <body>
         <CartProvider>{children}</CartProvider>
       </body>

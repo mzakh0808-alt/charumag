@@ -20,19 +20,3 @@ export async function updateOrderStatus(formData: FormData) {
   revalidatePath("/admin/orders");
   revalidatePath("/admin");
 }
-
-export async function updateBookingStatus(formData: FormData) {
-  await requireAdmin();
-  const id = String(formData.get("id") || "");
-  const parsed = z.enum(["new", "confirmed", "completed", "cancelled"]).safeParse(formData.get("status"));
-  if (!parsed.success) return;
-  await updateDb((database) => {
-    const booking = database.bookings.find((item) => item.id === id);
-    if (booking) {
-      booking.status = parsed.data;
-      booking.updatedAt = new Date().toISOString();
-    }
-  });
-  revalidatePath("/admin/bookings");
-  revalidatePath("/admin");
-}

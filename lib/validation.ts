@@ -38,22 +38,6 @@ export const orderSchema = z
     }
   });
 
-export const bookingSchema = z.object({
-  preferredDate: z
-    .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, "Выберите дату")
-    .refine((value) => {
-      const date = new Date(`${value}T00:00:00Z`);
-      return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
-    }, "Укажите существующую дату"),
-  guestsCount: z.number().int().min(1, "Минимум один гость").max(20, "Для группы больше 20 человек позвоните нам"),
-  customerName: z.string().trim().min(2, "Укажите имя").max(100),
-  phone,
-  email,
-  comment: z.string().trim().max(1000).optional().default(""),
-  consent: z.literal(true, "Нужно согласие на обработку персональных данных"),
-});
-
 export const productSchema = z.object({
   name: z.string().trim().min(2).max(140),
   slug: z.string().trim().regex(/^[a-z0-9-]+$/, "Только латинские буквы, цифры и дефис"),

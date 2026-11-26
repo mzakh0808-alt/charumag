@@ -24,7 +24,7 @@ export function SiteFooter() {
           <h2 className="footer-title">Музей и клуб</h2>
           <div className="footer-links">
             <span>наб. реки Фонтанки, 91</span>
-            <Link href="/museum">Записаться на экскурсию</Link>
+            <Link href="/museum">О музее и клубе</Link>
             <span>Чайное кафе «Ти Лаунж»</span>
           </div>
         </div>

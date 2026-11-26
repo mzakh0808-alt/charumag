@@ -1,7 +1,6 @@
 export type ProductKind = "tea" | "accessory";
 export type TeaType = "black" | "green" | "white" | "oolong" | "puer" | "herbal";
 export type OrderStatus = "new" | "confirmed" | "ready" | "completed" | "cancelled";
-export type BookingStatus = "new" | "confirmed" | "completed" | "cancelled";
 
 export interface Product {
   id: string;
@@ -75,27 +74,11 @@ export interface Order {
   updatedAt: string;
 }
 
-export interface TourBooking {
-  id: string;
-  preferredDate: string;
-  guestsCount: number;
-  customerName: string;
-  phone: string;
-  email: string;
-  comment: string;
-  status: BookingStatus;
-  consentAt: string;
-  consentVersion: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
 export interface Database {
   products: Product[];
   stores: Store[];
   inventory: Inventory[];
   orders: Order[];
-  bookings: TourBooking[];
 }
 
 export interface CartItem {
