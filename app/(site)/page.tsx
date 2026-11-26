@@ -1,4 +1,4 @@
-import { ArrowRight, Gift, ShoppingBag, Truck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Gift, ShoppingBag, Truck } from "lucide-react";
 import Link from "next/link";
 import { ProductCard } from "@/components/catalog/product-card";
 import { HeroArt } from "@/components/ui/hero-art";
@@ -27,19 +27,22 @@ export default async function HomePage() {
         }}
       />
       <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <p className="hero-kicker">Чайный супермаркет в Санкт-Петербурге</p>
-            <h1>Чай стоит того, чтобы не спешить.</h1>
+        <div className="container hero-shell">
+          <div className="hero-heading">
+            <p className="hero-kicker"><span />Чайный супермаркет в Санкт-Петербурге<span /></p>
+            <h1>
+              Чай стоит того,
+              <span className="hero-title-accent">чтобы не спешить.</span>
+            </h1>
             <p className="hero-copy">
-              Чай для дома и в подарок, посуда для любимых ритуалов. Выбирайте онлайн и забирайте в магазине или заказывайте доставку.
+              Чай для дома и в подарок, посуда для любимых ритуалов. Выбирайте онлайн и получайте заказ удобным способом.
             </p>
             <div className="hero-actions">
               <Link href="/catalog" className="button button-primary">
-                Выбрать чай <ArrowRight size={18} aria-hidden="true" />
+                Выбрать чай <ArrowRight size={17} aria-hidden="true" />
               </Link>
               <Link href="/stores" className="button button-secondary">
-                Магазины
+                Найти магазин <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -50,17 +53,17 @@ export default async function HomePage() {
       <section className="intro-strip" aria-label="О «Море чая»">
         <div className="container intro-grid">
           <div className="intro-item">
-            <ShoppingBag size={25} strokeWidth={1.25} aria-hidden="true" />
+            <ShoppingBag size={23} strokeWidth={1.25} aria-hidden="true" />
             <h2>Для дома</h2>
             <p>Чай и аксессуары для повседневного чаепития</p>
           </div>
           <div className="intro-item">
-            <Gift size={25} strokeWidth={1.25} aria-hidden="true" />
+            <Gift size={23} strokeWidth={1.25} aria-hidden="true" />
             <h2>В подарок</h2>
             <p>Сорта чая и посуда для приятного подарка</p>
           </div>
           <div className="intro-item">
-            <Truck size={25} strokeWidth={1.25} aria-hidden="true" />
+            <Truck size={23} strokeWidth={1.25} aria-hidden="true" />
             <h2>Удобное получение</h2>
             <p>Самовывоз из магазина или доставка</p>
           </div>
@@ -71,6 +74,7 @@ export default async function HomePage() {
         <div className="container">
           <div className="section-top">
             <div>
+              <p className="section-eyebrow">Избранная коллекция</p>
               <h2 className="section-heading">Выбор для неспешного чаепития</h2>
               <p className="muted mb-0 mt-3">Демонстрационная подборка из тестового каталога</p>
             </div>

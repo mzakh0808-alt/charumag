@@ -1,48 +1,103 @@
+import { Gift, Leaf, ShoppingBag, Sparkles } from "lucide-react";
+
 export function HeroArt() {
   return (
-    <div className="hero-art" aria-label="Чаша чая и чайная ветвь — авторская декоративная иллюстрация" role="img">
-      <svg viewBox="0 0 600 690" aria-hidden="true">
-        <defs>
-          <radialGradient id="tea-surface" cx="38%" cy="32%" r="72%">
-            <stop offset="0%" stopColor="#c6a36a" />
-            <stop offset="55%" stopColor="#8d623e" />
-            <stop offset="100%" stopColor="#513728" />
-          </radialGradient>
-          <linearGradient id="porcelain" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#fffdf5" />
-            <stop offset="100%" stopColor="#d9d2c0" />
-          </linearGradient>
-        </defs>
-        <circle className="art-orbit" cx="300" cy="314" r="196" />
-        <circle className="art-orbit art-orbit-inner" cx="300" cy="314" r="154" />
-        <g className="art-steam" fill="none" strokeLinecap="round">
-          <path d="M252 178c-42-58 35-75-2-132" />
-          <path d="M318 166c-34-47 27-66 0-112" />
-          <path d="M378 184c-27-42 22-58 2-96" />
-        </g>
-        <g className="art-branch" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M90 525c78-66 97-154 95-241" />
-          <path d="M153 425c-43-3-67-24-76-60 42-1 69 19 76 60Z" />
-          <path d="M175 363c39-11 67-37 76-76-43 1-70 27-76 76Z" />
-          <path d="M116 477c-37 0-62-17-75-48 37-6 64 12 75 48Z" />
-          <path d="M178 316c-28-10-44-31-46-59 31 4 48 26 46 59Z" />
-          <path d="M421 507c45-59 70-120 76-185" />
-          <path d="M470 403c-34-7-55-28-61-59 36 2 58 24 61 59Z" />
-          <path d="M493 342c31-10 50-31 57-60-33 1-53 23-57 60Z" />
-        </g>
-        <ellipse cx="304" cy="531" rx="150" ry="25" fill="#0e1e17" opacity=".22" />
-        <path d="M166 340c5 129 53 188 139 188s132-62 136-188Z" fill="url(#porcelain)" />
-        <path d="M184 388c17 79 57 115 121 115 57 0 96-33 118-101-34 35-72 51-119 51-48 0-88-22-120-65Z" fill="#c7c1b1" opacity=".38" />
-        <ellipse cx="304" cy="340" rx="140" ry="63" fill="#f7f3e8" />
-        <ellipse cx="304" cy="340" rx="123" ry="50" fill="url(#tea-surface)" />
-        <ellipse cx="304" cy="340" rx="123" ry="50" fill="none" stroke="#b39761" strokeWidth="2" />
-        <path d="M224 324c25-27 83-37 124-21" fill="none" stroke="#f5deb0" strokeWidth="5" strokeLinecap="round" opacity=".3" />
-        <path d="M432 366c62-22 86 17 66 61-15 32-45 47-77 37" fill="none" stroke="#ded7c7" strokeWidth="18" strokeLinecap="round" />
-      </svg>
-      <div className="hero-art-note">
-        <span>Санкт-Петербург</span>
-        <span>чай для дома и в подарок</span>
+    <div className="hero-art" aria-label="Чашка чая, упаковка и чайные листья — декоративная композиция" role="img">
+      <div className="hero-orbit hero-orbit-outer" />
+      <div className="hero-orbit hero-orbit-inner" />
+
+      <div className="hero-float hero-float-left">
+        <span className="hero-float-icon"><Leaf size={19} strokeWidth={1.5} /></span>
+        <strong>Чай под ваш ритм</strong>
+        <span>Для утра, работы<br />и тихого вечера</span>
       </div>
+      <div className="hero-float hero-float-right">
+        <div className="hero-mini-icons" aria-hidden="true">
+          <span><Leaf size={13} /></span><span><Gift size={13} /></span><span><ShoppingBag size={13} /></span>
+        </div>
+        <strong>Дома и в подарок</strong>
+        <span>Соберите свой<br />чайный ритуал</span>
+      </div>
+
+      <div className="hero-seal" aria-hidden="true">
+        <span>МОРЕ ЧАЯ · САНКТ-ПЕТЕРБУРГ ·</span>
+        <Sparkles size={25} strokeWidth={1.1} />
+      </div>
+
+      <div className="hero-main-art">
+        <svg viewBox="0 0 620 610" aria-hidden="true">
+          <defs>
+            <radialGradient id="hero-tea-surface" cx="38%" cy="28%" r="75%">
+              <stop offset="0%" stopColor="#bca37c" />
+              <stop offset="55%" stopColor="#746149" />
+              <stop offset="100%" stopColor="#342d25" />
+            </radialGradient>
+            <linearGradient id="hero-porcelain" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="65%" stopColor="#e6e4dd" />
+              <stop offset="100%" stopColor="#c4c4bc" />
+            </linearGradient>
+            <linearGradient id="hero-package" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#b9c0b2" />
+              <stop offset="55%" stopColor="#7d8d7d" />
+              <stop offset="100%" stopColor="#4b6152" />
+            </linearGradient>
+            <filter id="hero-shadow" x="-30%" y="-30%" width="160%" height="180%">
+              <feDropShadow dx="0" dy="22" stdDeviation="18" floodColor="#18231c" floodOpacity=".18" />
+            </filter>
+          </defs>
+
+          <g className="hero-art-branches" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M126 511c61-77 82-176 76-289" />
+            <path d="M188 378c-46-3-73-28-82-66 45-1 75 22 82 66Z" />
+            <path d="M201 303c43-13 71-41 79-82-46 2-75 31-79 82Z" />
+            <path d="M158 436c-40 0-68-20-82-55 41-6 70 14 82 55Z" />
+            <path d="M454 495c-45-62-68-132-73-202" />
+            <path d="M399 381c37-7 60-30 66-64-39 3-63 26-66 64Z" />
+            <path d="M382 313c-34-11-56-34-63-66 35 3 58 25 63 66Z" />
+          </g>
+
+          <g filter="url(#hero-shadow)">
+            <path d="M176 105h232l17 369H157Z" fill="url(#hero-package)" />
+            <path d="M176 105h232l-10 29H183Z" fill="#d8ded1" opacity=".55" />
+            <path d="M181 153h220M169 429h244" fill="none" stroke="#f4f3e8" strokeOpacity=".45" />
+            <circle cx="291" cy="261" r="68" fill="none" stroke="#f5f2e7" strokeOpacity=".65" />
+            <path d="M259 273c20-42 47-48 70-55-3 36-22 66-63 67m4-3c11-18 26-32 47-45" fill="none" stroke="#f5f2e7" strokeWidth="2" strokeLinecap="round" />
+            <text x="291" y="363" fill="#fffdf5" fontFamily="Georgia, serif" fontSize="24" textAnchor="middle" letterSpacing="3">МОРЕ ЧАЯ</text>
+          </g>
+
+          <ellipse cx="323" cy="555" rx="181" ry="28" fill="#24372c" opacity=".14" />
+          <g filter="url(#hero-shadow)">
+            <path d="M162 351c5 137 58 201 151 201s143-64 148-201Z" fill="url(#hero-porcelain)" />
+            <path d="M184 403c18 85 62 124 131 124 62 0 104-35 128-109-37 38-78 55-129 55-52 0-95-24-130-70Z" fill="#aeb0a8" opacity=".32" />
+            <ellipse cx="312" cy="351" rx="150" ry="67" fill="#f8f7f1" />
+            <ellipse cx="312" cy="351" rx="132" ry="54" fill="url(#hero-tea-surface)" />
+            <ellipse cx="312" cy="351" rx="132" ry="54" fill="none" stroke="#b2a17f" strokeWidth="2" />
+            <path d="M224 333c27-29 89-39 133-22" fill="none" stroke="#f5e2bd" strokeWidth="5" strokeLinecap="round" opacity=".28" />
+            <path d="M450 379c67-24 93 18 71 65-16 35-49 51-84 40" fill="none" stroke="#d8d8d0" strokeWidth="19" strokeLinecap="round" />
+          </g>
+          <g className="hero-art-steam" fill="none" strokeLinecap="round">
+            <path d="M260 279c-42-58 35-75-2-132" />
+            <path d="M326 267c-34-47 27-66 0-112" />
+            <path d="M386 285c-27-42 22-58 2-96" />
+          </g>
+        </svg>
+      </div>
+
+      <div className="hero-glass hero-glass-left">
+        <span className="hero-glass-icon"><Leaf size={16} /></span>
+        <span><strong>Для дома</strong><small>любимые сорта</small></span>
+      </div>
+      <div className="hero-glass hero-glass-right">
+        <span className="hero-glass-icon hero-glass-icon-warm"><Gift size={16} /></span>
+        <span><strong>В подарок</strong><small>чай и посуда</small></span>
+      </div>
+
+      <div className="hero-proof">
+        <span className="hero-proof-line" />
+        <span>Выбирайте чай<br />в своём темпе</span>
+      </div>
+      <div className="hero-art-note"><Sparkles size={16} /><span>Больше вкуса.<br />Меньше суеты.</span></div>
     </div>
   );
 }

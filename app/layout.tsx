@@ -8,6 +8,7 @@ const manrope = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-manr
 const display = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-display",
 });
 
