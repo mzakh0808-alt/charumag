@@ -41,7 +41,7 @@ export function HeroArt() {
       </svg>
       <div className="hero-art-note">
         <span>Санкт-Петербург</span>
-        <span>чайная лавка с 1882 года</span>
+        <span>чай для дома и в подарок</span>
       </div>
     </div>
   );

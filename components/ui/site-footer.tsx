@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div>
           <Logo light />
           <p className="mt-4 max-w-sm text-sm text-[#aebbad]">
-            Чай для дома и в подарок, аксессуары и пространство чайной культуры в Санкт-Петербурге.
+            Чай для дома и в подарок, посуда и аксессуары в Санкт-Петербурге.
           </p>
         </div>
         <div>
@@ -21,11 +21,10 @@ export function SiteFooter() {
           </nav>
         </div>
         <div>
-          <h2 className="footer-title">Музей и клуб</h2>
+          <h2 className="footer-title">Получение заказа</h2>
           <div className="footer-links">
-            <span>наб. реки Фонтанки, 91</span>
-            <Link href="/museum">О музее и клубе</Link>
-            <span>Чайное кафе «Ти Лаунж»</span>
+            <span>Самовывоз из магазина</span>
+            <span>Доставка по выбранному адресу</span>
           </div>
         </div>
       </div>

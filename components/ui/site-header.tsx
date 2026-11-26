@@ -10,7 +10,6 @@ import { Logo } from "@/components/ui/logo";
 const links = [
   { href: "/catalog", label: "Каталог" },
   { href: "/stores", label: "Магазины" },
-  { href: "/museum", label: "Музей и клуб" },
 ];
 
 export function SiteHeader() {

@@ -19,8 +19,16 @@ function seedDatabase() {
 }
 
 function parseStoredDatabase(data: unknown): Database {
-  if (typeof data === "string") return JSON.parse(data) as Database;
-  return data as Database;
+  const database = (typeof data === "string" ? JSON.parse(data) : data) as Database;
+  const legacyStore = database.stores.find((store) => store.id === "store-fontanka-demo");
+  if (legacyStore) {
+    legacyStore.slug = "central-demo";
+    legacyStore.name = "Демо-магазин «Центральный»";
+    legacyStore.address = "Демонстрационный адрес: центр Санкт-Петербурга";
+    legacyStore.latitude = 59.93;
+    legacyStore.longitude = 30.32;
+  }
+  return database;
 }
 
 function assertStorageConfigured() {
@@ -66,7 +74,7 @@ async function getPostgresClient() {
 async function getLocalDb(): Promise<Database> {
   try {
     const content = await fs.readFile(localDataPath, "utf8");
-    return JSON.parse(content) as Database;
+    return parseStoredDatabase(content);
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
     return seedDatabase();

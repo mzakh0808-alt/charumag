@@ -14,10 +14,10 @@ const display = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Море чая — чайные магазины в Санкт-Петербурге", template: "%s — Море чая" },
-  description: "Чай и аксессуары для дома и в подарок. Магазины в Санкт-Петербурге, музей и клуб чайной культуры на Фонтанке.",
+  description: "Чай и аксессуары для дома и в подарок. Магазины в Санкт-Петербурге, самовывоз и доставка.",
   openGraph: {
     title: "Море чая",
-    description: "Чай, посуда и чайная культура в Санкт-Петербурге.",
+    description: "Чай, посуда и аксессуары в Санкт-Петербурге.",
     locale: "ru_RU",
     type: "website",
   },
