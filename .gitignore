@@ -9,3 +9,5 @@ out/
 *.tsbuildinfo
 .DS_Store
 data/*.local.json
+.vercel
+.env*

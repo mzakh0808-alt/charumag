@@ -18,6 +18,11 @@ function seedDatabase() {
   return structuredClone(demoData) as Database;
 }
 
+function parseStoredDatabase(data: unknown): Database {
+  if (typeof data === "string") return JSON.parse(data) as Database;
+  return data as Database;
+}
+
 function assertStorageConfigured() {
   if (process.env.VERCEL && !connectionString) {
     throw new Error("DATABASE_URL is required on Vercel. Connect a PostgreSQL database to the project.");
@@ -72,9 +77,9 @@ export async function getDb(): Promise<Database> {
   assertStorageConfigured();
   if (connectionString) {
     const sql = await getPostgresClient();
-    const rows = await sql<{ data: Database }[]>`SELECT data FROM more_chaya_state WHERE id = 1`;
+    const rows = await sql<{ data: unknown }[]>`SELECT data FROM more_chaya_state WHERE id = 1`;
     if (!rows[0]) throw new Error("Demo state is missing from PostgreSQL");
-    return rows[0].data;
+    return parseStoredDatabase(rows[0].data);
   }
   return getLocalDb();
 }
@@ -82,11 +87,11 @@ export async function getDb(): Promise<Database> {
 async function updatePostgres<T>(update: (database: Database) => T | Promise<T>): Promise<T> {
   const sql = await getPostgresClient();
   return sql.begin(async (transaction) => {
-    const rows = await transaction<{ data: Database }[]>`
+    const rows = await transaction<{ data: unknown }[]>`
       SELECT data FROM more_chaya_state WHERE id = 1 FOR UPDATE
     `;
     if (!rows[0]) throw new Error("Demo state is missing from PostgreSQL");
-    const database = rows[0].data;
+    const database = parseStoredDatabase(rows[0].data);
     const result = await update(database);
     await transaction`
       UPDATE more_chaya_state
