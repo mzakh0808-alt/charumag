@@ -16,14 +16,15 @@ export function SiteHeader() {
   const pathname = usePathname();
   const { count, hydrated } = useCart();
   const [open, setOpen] = useState(false);
+  const isHome = pathname === "/";
 
   return (
     <>
       <a href="#main-content" className="skip-link">Перейти к содержимому</a>
-      <div className="demo-bar">Тестовый сайт: ассортимент, цены, остатки и контакты магазинов — демонстрационные</div>
-      <header className="site-header">
+      <div className={`demo-bar ${isHome ? "demo-bar-home" : ""}`}>Тестовый сайт: ассортимент, цены, остатки и контакты магазинов — демонстрационные</div>
+      <header className={`site-header ${isHome ? "site-header-home" : ""}`}>
         <div className="container header-inner">
-          <Logo />
+          <Logo light={isHome} />
           <nav className="desktop-nav" aria-label="Основная навигация">
             {links.map((link) => (
               <Link key={link.href} href={link.href} className={`nav-link ${pathname.startsWith(link.href) ? "active" : ""}`}>
