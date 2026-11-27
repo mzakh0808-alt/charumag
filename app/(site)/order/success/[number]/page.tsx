@@ -10,9 +10,9 @@ export default async function OrderSuccessPage({ params }: { params: Promise<{ n
   return (
     <div className="narrow section">
       <ClearCart />
-      <div className="empty-state text-center">
-        <Check size={44} className="mx-auto mb-5 text-[var(--pine)]" strokeWidth={1.4} aria-hidden="true" />
-        <h1 className="serif mb-3 text-4xl font-medium">Заказ №{number} создан</h1>
+      <div className="empty-state order-success text-center">
+        <Check size={44} className="mx-auto mb-5" strokeWidth={1.4} aria-hidden="true" />
+        <h1 className="success-title">Заказ №{number} создан</h1>
         <p className="muted mx-auto max-w-lg">
           Демонстрационный заказ сохранён в админ-панели. В рабочей версии здесь будут указаны сроки и способ подтверждения.
         </p>

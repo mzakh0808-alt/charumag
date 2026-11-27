@@ -13,7 +13,7 @@ export function CartView() {
   if (!items.length) {
     return (
       <div className="empty-state">
-        <ShoppingBag size={36} strokeWidth={1.2} className="mb-4 text-[var(--pine)]" aria-hidden="true" />
+        <ShoppingBag size={36} strokeWidth={1.2} className="mb-4" aria-hidden="true" />
         <h2>В корзине пока пусто</h2>
         <p className="muted">Начните с чая или выберите посуду для домашнего чаепития.</p>
         <Link href="/catalog" className="button button-primary">Перейти в каталог</Link>
@@ -44,10 +44,10 @@ export function CartView() {
       </div>
       <div className="cart-bottom">
         <div>
-          <div className="text-xs text-[var(--muted)]">Товары, без стоимости доставки</div>
+          <div className="cart-bottom-label">Товары, без стоимости доставки</div>
           <div className="cart-total">{formatPrice(total)}</div>
         </div>
-        <Link href="/checkout" className="button button-primary">Оформить заказ</Link>
+        <Link href="/checkout" className="button button-gold">Оформить заказ</Link>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export default function CartPage() {
     <div className="container">
       <div className="page-head">
         <Breadcrumbs items={[{ href: "/", label: "Главная" }, { label: "Корзина" }]} />
-        <h1>Корзина</h1>
+        <h1>Ваша <em>корзина</em></h1>
       </div>
       <CartView />
     </div>

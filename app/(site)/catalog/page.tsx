@@ -67,7 +67,7 @@ export default async function CatalogPage({ searchParams }: { searchParams: Sear
     <div className="container">
       <div className="page-head">
         <Breadcrumbs items={[{ href: "/", label: "Главная" }, { label: "Каталог" }]} />
-        <h1>Чай и всё к нему</h1>
+        <h1>Чайная <em>коллекция</em></h1>
         <p>Ищите по названию, выбирайте тип и страну или оставьте только товары в наличии.</p>
       </div>
       <div className="catalog-layout">

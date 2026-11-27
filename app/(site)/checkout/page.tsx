@@ -12,7 +12,7 @@ export default async function CheckoutPage() {
     <div className="container">
       <div className="page-head">
         <Breadcrumbs items={[{ href: "/", label: "Главная" }, { href: "/cart", label: "Корзина" }, { label: "Оформление" }]} />
-        <h1>Оформление заказа</h1>
+        <h1>Оформление <em>заказа</em></h1>
         <p>Выберите способ получения и оставьте контакты для подтверждения.</p>
       </div>
       <CheckoutForm stores={getActiveStores(database, true)} />

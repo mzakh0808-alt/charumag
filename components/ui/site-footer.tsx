@@ -5,11 +5,10 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
-        <div>
+        <div className="footer-brand">
           <Logo light />
-          <p className="mt-4 max-w-sm text-sm text-[#aebbad]">
-            Чай для дома и в подарок, посуда и аксессуары в Санкт-Петербурге.
-          </p>
+          <p className="footer-tagline">Пауза, <em>которую выбираете вы.</em></p>
+          <p className="footer-description">Чай для дома и в подарок, посуда и аксессуары в Санкт-Петербурге.</p>
         </div>
         <div>
           <h2 className="footer-title">Покупателям</h2>
@@ -29,7 +28,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="container footer-bottom">
-        Демонстрационный MVP. Не является публичной офертой. Данные о компании и товарах требуют проверки перед публикацией.
+        <span>Демонстрационный MVP. Не является публичной офертой. Данные о компании и товарах требуют проверки перед публикацией.</span>
+        <span>Море чая · Санкт-Петербург</span>
       </div>
     </footer>
   );

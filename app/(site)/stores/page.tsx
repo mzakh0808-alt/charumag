@@ -20,7 +20,7 @@ export default async function StoresPage() {
     <div className="container pb-16">
       <div className="page-head">
         <Breadcrumbs items={[{ href: "/", label: "Главная" }, { label: "Магазины" }]} />
-        <h1>Приходите за чаем</h1>
+        <h1>Приходите <em>за чаем</em></h1>
         <p>Адреса и контакты ниже нужны для проверки макета. Перед публикацией их заменят реальными данными сети.</p>
       </div>
       <JsonLd
@@ -44,14 +44,15 @@ export default async function StoresPage() {
         }}
       />
       <div className="store-grid">
-        {stores.map((store) => (
+        {stores.map((store, index) => (
           <article key={store.id} className="store-card">
+            <span className="store-number">{String(index + 1).padStart(2, "0")}</span>
             {store.isDemo ? <span className="demo-badge">Демонстрационный магазин</span> : null}
             <h2>{store.name}</h2>
             <div className="store-line"><MapPin size={18} aria-hidden="true" /><span>{store.address}</span></div>
             <div className="store-line"><Phone size={18} aria-hidden="true" /><span>{store.phone}</span></div>
             <div className="store-line"><Clock3 size={18} aria-hidden="true" /><span>{store.workingHours}</span></div>
-            {store.isPickupAvailable ? <p className="mb-0 mt-5 text-xs font-semibold text-[var(--pine)]">Доступен самовывоз демонстрационных заказов</p> : null}
+            {store.isPickupAvailable ? <p className="store-pickup">Доступен самовывоз демонстрационных заказов</p> : null}
           </article>
         ))}
       </div>
@@ -64,7 +65,7 @@ export default async function StoresPage() {
           allowFullScreen
         />
       </div>
-      <p className="mt-3 text-xs text-[var(--muted)]">Карта © Яндекс. Метки показывают демонстрационные адреса, а не подтверждённые магазины сети.</p>
+      <p className="map-note">Карта © Яндекс. Метки показывают демонстрационные адреса, а не подтверждённые магазины сети.</p>
     </div>
   );
 }

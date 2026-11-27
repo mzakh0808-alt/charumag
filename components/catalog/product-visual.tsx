@@ -10,10 +10,12 @@ export function ProductVisual({ product, large = false }: { product: Product; la
       role="img"
       aria-label={`${product.imageAlt}. Изображение-заглушка`}
     >
-      <span className="visual-demo">Изображение-заглушка</span>
+      <span className="visual-demo">Демо-изображение</span>
+      <div className="visual-halo" aria-hidden="true" />
       <div className="visual-object">
-        <Icon strokeWidth={1.15} aria-hidden="true" />
-        <span>{product.kind === "tea" ? "Море чая" : "посуда"}</span>
+        <span className="visual-brand">Море чая</span>
+        <div className="visual-emblem"><Icon strokeWidth={1.05} aria-hidden="true" /></div>
+        <span className="visual-kind">{product.kind === "tea" ? "Чайная коллекция" : "Чайные аксессуары"}</span>
       </div>
       <span className="visual-caption">{product.country}</span>
     </div>

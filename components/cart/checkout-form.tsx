@@ -11,7 +11,7 @@ import type { Store } from "@/lib/types";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
-  return <button type="submit" className="button button-primary w-full" disabled={pending}>{pending ? "Создаём заказ…" : "Оформить заказ"}</button>;
+  return <button type="submit" className="button button-gold w-full" disabled={pending}>{pending ? "Создаём заказ…" : "Оформить заказ"}</button>;
 }
 
 function FieldError({ errors }: { errors?: string[] }) {
@@ -38,8 +38,8 @@ export function CheckoutForm({ stores }: { stores: Store[] }) {
     <form action={formAction} className="checkout-layout">
       <input type="hidden" name="items" value={JSON.stringify(items.map((item) => ({ productId: item.productId, quantity: item.quantity })))} />
       <div className="form-grid">
-        <section>
-          <h2 className="serif mb-5 text-2xl font-medium">Способ получения</h2>
+        <section className="checkout-section">
+          <h2>Способ получения</h2>
           {state.error ? <div className="form-error mb-5" role="alert">{state.error}</div> : null}
           <div className="radio-cards">
             <label className="radio-card">
@@ -70,8 +70,8 @@ export function CheckoutForm({ stores }: { stores: Store[] }) {
           </div>
         )}
 
-        <section>
-          <h2 className="serif mb-5 text-2xl font-medium">Контакты</h2>
+        <section className="checkout-section">
+          <h2>Контакты</h2>
           <div className="form-grid">
             <div className="form-two">
               <div className="field">
@@ -115,9 +115,7 @@ export function CheckoutForm({ stores }: { stores: Store[] }) {
         </label>
         <FieldError errors={state.fieldErrors?.consent} />
         <SubmitButton />
-        <p className="mb-0 mt-4 text-xs text-[var(--muted)]">
-          Это демонстрационный заказ без онлайн-оплаты. Администратор увидит его в панели управления.
-        </p>
+        <p className="order-summary-note">Это демонстрационный заказ без онлайн-оплаты. Администратор увидит его в панели управления.</p>
       </aside>
     </form>
   );
